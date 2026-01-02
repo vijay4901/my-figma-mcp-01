@@ -84,21 +84,35 @@ const server = Bun.serve({
     }
 
     // Handle WebSocket upgrade
-    const success = server.upgrade(req, {
-      headers: {
-        "Access-Control-Allow-Origin": "*",
-      },
-    });
+    const upgradeHeader = req.headers.get("upgrade");
+    if (upgradeHeader?.toLowerCase() === "websocket") {
+      console.log("WebSocket upgrade request received");
+      const success = server.upgrade(req, {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+        },
+      });
 
-    if (success) {
-      return; // Upgraded to WebSocket
+      if (success) {
+        console.log("WebSocket upgrade successful");
+        return; // Upgraded to WebSocket
+      }
+      
+      console.error("WebSocket upgrade failed");
+      return new Response("WebSocket upgrade failed", {
+        status: 400,
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+        },
+      });
     }
 
     // Return response for non-WebSocket requests
-    return new Response("WebSocket upgrade failed", {
-      status: 400,
+    return new Response("Use WebSocket protocol to connect", {
+      status: 426,
       headers: {
         "Access-Control-Allow-Origin": "*",
+        "Upgrade": "websocket",
       },
     });
   },
