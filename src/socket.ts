@@ -128,7 +128,6 @@ const server = Bun.serve({
       },
     });
   },
-  },
   websocket: {
     open: handleConnection,
     message(ws: ServerWebSocket<any>, message: string | Buffer) {
