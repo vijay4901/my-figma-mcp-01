@@ -36,8 +36,8 @@ function handleConnection(ws: ServerWebSocket<any>) {
   };
 }
 
-const PORT = process.env.PORT || 3055;
-const HOSTNAME = process.env.NODE_ENV === "production" ? "0.0.0.0" : "localhost";
+const PORT = parseInt(process.env.PORT || "10000", 10);
+const HOSTNAME = "0.0.0.0"; // Always bind to 0.0.0.0 for cloud compatibility
 
 const server = Bun.serve({
   port: PORT,
