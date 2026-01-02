@@ -45,6 +45,10 @@ const server = Bun.serve({
   fetch(req: Request, server: Server) {
     const url = new URL(req.url);
     
+    // Log all incoming requests
+    console.log(`Incoming request: ${req.method} ${url.pathname}`);
+    console.log(`Headers:`, Object.fromEntries(req.headers.entries()));
+    
     // Health check endpoint for Render.com
     if (url.pathname === "/health" && req.method === "GET") {
       return new Response(JSON.stringify({ 
@@ -63,6 +67,18 @@ const server = Bun.serve({
 
     // Root endpoint
     if (url.pathname === "/" && req.method === "GET") {
+      // Check if this is a WebSocket upgrade request
+      const upgradeHeader = req.headers.get("upgrade");
+      if (upgradeHeader?.toLowerCase() === "websocket") {
+        console.log("⚡ WebSocket upgrade request at root path");
+        const success = server.upgrade(req);
+        if (success) {
+          console.log("✅ WebSocket upgrade successful");
+          return;
+        }
+        console.error("❌ WebSocket upgrade failed");
+      }
+      
       return new Response("Figma MCP WebSocket Server is running", {
         status: 200,
         headers: {
@@ -83,22 +99,18 @@ const server = Bun.serve({
       });
     }
 
-    // Handle WebSocket upgrade
+    // Handle WebSocket upgrade for any path
     const upgradeHeader = req.headers.get("upgrade");
     if (upgradeHeader?.toLowerCase() === "websocket") {
-      console.log("WebSocket upgrade request received");
-      const success = server.upgrade(req, {
-        headers: {
-          "Access-Control-Allow-Origin": "*",
-        },
-      });
+      console.log(`⚡ WebSocket upgrade request at ${url.pathname}`);
+      const success = server.upgrade(req);
 
       if (success) {
-        console.log("WebSocket upgrade successful");
+        console.log("✅ WebSocket upgrade successful");
         return; // Upgraded to WebSocket
       }
       
-      console.error("WebSocket upgrade failed");
+      console.error("❌ WebSocket upgrade failed");
       return new Response("WebSocket upgrade failed", {
         status: 400,
         headers: {
@@ -115,6 +127,7 @@ const server = Bun.serve({
         "Upgrade": "websocket",
       },
     });
+  },
   },
   websocket: {
     open: handleConnection,
