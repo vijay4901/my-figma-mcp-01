@@ -1,6 +1,6 @@
 {
-  "name": "Cursor MCP Plugin",
-  "id": "cursor-mcp-plugin",
+  "name": "Cursor for Figma",
+  "id": "1589219376862346255",
   "api": "1.0.0",
   "main": "code.js",
   "ui": "ui.html",
@@ -13,19 +13,9 @@
     "allowedDomains": [
       "https://*.onrender.com",
       "wss://*.onrender.com",
-      "https://*.railway.app",
-      "wss://*.railway.app",
       "https://*.render.com",
-      "wss://*.render.com",
-      "https://*.fly.dev",
-      "wss://*.fly.dev"
-    ],
-    "devAllowedDomains": [
-      "http://localhost:3055",
-      "ws://localhost:3055"
+      "wss://*.render.com"
     ]
   },
-  "documentAccess": "dynamic-page",
-  "enableProposedApi": true,
-  "enablePrivatePluginApi": true
+  "documentAccess": "dynamic-page"
 }

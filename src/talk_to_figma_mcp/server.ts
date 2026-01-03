@@ -75,7 +75,7 @@ let currentChannel: string | null = null;
 
 // Create MCP server
 const server = new McpServer({
-  name: "TalkToFigmaMCP",
+  name: "DesignWithAI",
   version: "1.0.0",
 });
 

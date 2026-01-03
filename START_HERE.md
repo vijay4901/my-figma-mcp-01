@@ -9,7 +9,7 @@
 ## 📖 Choose Your Path
 
 ### 🏃 Want to deploy RIGHT NOW? (5 minutes)
-→ **Open: [QUICKSTART.md](./QUICKSTART.md)**
+→ **Open: [QUICKSTART.md](./QUICKSTART.dmd)**
 
 ### 📚 Want detailed guide with explanations?
 → **Open: [DEPLOYMENT.md](./DEPLOYMENT.md)**
