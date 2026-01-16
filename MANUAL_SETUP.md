@@ -52,7 +52,7 @@ git push -u origin main
    - Click "Connect"
 
 3. **Configure Service**
-   - **Name**: `figma-mcp-websocket` (or your choice)
+   - **Name**: `design-with-ai` (or your choice)
    - **Region**: Choose closest to you
    - **Plan**: Select **"Free"**
    - Click "Create Web Service"
@@ -130,7 +130,7 @@ To prevent your free Render service from sleeping:
 ┌─────────────────────────────────┐
 │      Cursor AI (Your Computer)  │
 │      MCP Client Connected        │
-│   bunx cursor-talk-to-figma-mcp │
+│   bunx design-with-ai           │
 └─────────────────────────────────┘
 
 Optional: UptimeRobot → Pings /health every 5 min
@@ -289,4 +289,8 @@ After successful deployment:
 **Monthly Cost**: $0 (Free forever with Render + UptimeRobot)
 
 **Result**: Production-ready cloud WebSocket server! 🎉
+
+
+
+
 

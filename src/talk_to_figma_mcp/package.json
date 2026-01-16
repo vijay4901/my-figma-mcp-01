@@ -1,7 +1,7 @@
 {
-  "name": "talk-to-figma-mcp",
+  "name": "design-with-ai",
   "version": "1.0.0",
-  "description": "MCP server for Figma integration",
+  "description": "Design with cursor Agent - MCP server for Figma integration",
   "main": "server.ts",
   "type": "module",
   "scripts": {

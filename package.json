@@ -1,11 +1,30 @@
 {
-  "name": "cursor-talk-to-figma-mcp",
-  "description": "Cursor Talk to Figma MCP",
+  "name": "design-with-ai",
+  "description": "Design with cursor Agent - Figma MCP server for AI-powered Figma design automation",
   "version": "0.3.5",
+  "author": "viju490",
+  "license": "MIT",
+  "keywords": [
+    "figma",
+    "mcp",
+    "cursor",
+    "ai",
+    "design",
+    "automation",
+    "model-context-protocol"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/viju490/cursor-talk-to-figma-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/viju490/cursor-talk-to-figma-mcp/issues"
+  },
+  "homepage": "https://github.com/viju490/cursor-talk-to-figma-mcp#readme",
   "module": "dist/server.js",
   "main": "dist/server.js",
   "bin": {
-    "cursor-talk-to-figma-mcp": "dist/server.js"
+    "design-with-ai": "dist/server.js"
   },
   "files": [
     "dist",

@@ -159,7 +159,7 @@ Cursor receives result ✅
 ## File Structure
 
 ```
-cursor-talk-to-figma-mcp-1/
+design-with-ai/
 │
 ├── 📄 Deployment Files (New!)
 │   ├── render.yaml              # Render.com config
@@ -322,4 +322,8 @@ Recommendation: Use Cloud for production!
 ---
 
 This architecture provides a scalable, secure, and free solution for Figma-Cursor integration! 🚀
+
+
+
+
 

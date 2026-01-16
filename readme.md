@@ -1,4 +1,4 @@
-# Cursor Talk to Figma MCP
+# Design with cursor Agent
 
 This project implements a Model Context Protocol (MCP) integration between Cursor AI and Figma, allowing Cursor to communicate with Figma for reading designs and modifying them programmatically.
 
@@ -32,7 +32,7 @@ bun setup
 bun socket
 ```
 
-4. **NEW** Install Figma plugin from [Figma community page](https://www.figma.com/community/plugin/1485687494525374295/cursor-talk-to-figma-mcp-plugin) or [install locally](#figma-plugin)
+4. **NEW** Install Figma plugin from [Figma community page](https://www.figma.com/community/plugin/1485687494525374295/design-with-ai-plugin) or [install locally](#figma-plugin)
 
 ### 🚀 Cloud Deployment (Recommended for Production)
 
@@ -77,7 +77,7 @@ To develop, update your mcp config to direct to your local directory.
 ```json
 {
   "mcpServers": {
-    "TalkToFigma": {
+    "DesignWithAI": {
       "command": "bun",
       "args": ["/path-to-repo/src/talk_to_figma_mcp/server.ts"]
     }
@@ -94,9 +94,9 @@ Add the server to your Cursor MCP configuration in `~/.cursor/mcp.json`:
 ```json
 {
   "mcpServers": {
-    "TalkToFigma": {
+    "DesignWithAI": {
       "command": "bunx",
-      "args": ["cursor-talk-to-figma-mcp@latest"]
+      "args": ["design-with-ai@latest"]
     }
   }
 }

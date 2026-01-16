@@ -8,10 +8,10 @@ bun install
 # Create mcp.json with the current directory path
 echo "{
   \"mcpServers\": {
-    \"TalkToFigma\": {
+    \"DesignWithAI\": {
       \"command\": \"bunx\",
       \"args\": [
-        \"cursor-talk-to-figma-mcp@latest\"
+        \"design-with-ai@latest\"
       ]
     }
   }

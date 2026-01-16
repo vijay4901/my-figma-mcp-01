@@ -23,7 +23,7 @@ git commit -m "Initial commit - Ready for Render deployment"
 ### 1.2 Create GitHub Repository
 
 1. Go to https://github.com/new
-2. Create a new repository (e.g., `figma-mcp-websocket`)
+2. Create a new repository (e.g., `design-with-ai`)
 3. **Do not** initialize with README (you already have files)
 
 ### 1.3 Push to GitHub
@@ -58,7 +58,7 @@ git push -u origin main
 Render will auto-detect the `render.yaml` configuration, but verify these settings:
 
 **Basic Settings:**
-- **Name**: `figma-mcp-websocket` (or your preferred name)
+- **Name**: `design-with-ai` (or your preferred name)
 - **Region**: Choose closest to you (e.g., Oregon (US West))
 - **Branch**: `main`
 - **Root Directory**: Leave empty
@@ -91,7 +91,7 @@ Render will auto-detect the `render.yaml` configuration, but verify these settin
 
 Once deployed, you'll see your service URL:
 ```
-https://figma-mcp-websocket.onrender.com
+https://design-with-ai.onrender.com
 ```
 
 ### 3.2 WebSocket URL Format
@@ -198,10 +198,10 @@ Edit `~/.cursor/mcp.json`:
 ```json
 {
   "mcpServers": {
-    "TalkToFigma": {
+    "DesignWithAI": {
       "command": "bunx",
       "args": [
-        "cursor-talk-to-figma-mcp@latest",
+        "design-with-ai@latest",
         "--server=your-service-name.onrender.com"
       ]
     }
@@ -392,4 +392,8 @@ You now have a **lifetime free** WebSocket server running on Render.com! Your Fi
 - Add more MCP tools
 - Share with your team
 - Build amazing things! 🚀
+
+
+
+
 
